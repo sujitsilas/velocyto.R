@@ -2,3 +2,15 @@ CXX_STD = CXX11
 PKG_CXXFLAGS= $(SHLIB_OPENMP_CXXFLAGS)
 PKG_CFLAGS=$(SHLIB_OPENMP_CFLAGS)
 PKG_LIBS=-lboost_filesystem -lboost_system   -lstdc++ $(LAPACK_LIBS) $(BLAS_LIBS)  $(SHLIB_OPENMP_CFLAGS) $(FLIBS) -L /opt/homebrew/Cellar/boost/1.87.0/lib/
+
+CC = clang
+CXX = clang++
+CXX11 = clang++
+F77 = /opt/homebrew/bin/gfortran
+FC = /opt/homebrew/bin/gfortran
+
+LDFLAGS = -L/opt/homebrew/lib
+CPPFLAGS = -I/opt/homebrew/include
+
+# Make sure this points where gfortran actually lives
+FLIBS = -L/opt/homebrew/lib/gcc/14 -lgfortran -lquadmath -lm
